@@ -30,6 +30,11 @@
                                {{post.content}}
                             </p>
                             <span class="d-block text-right tm-color-primary">Creative . Design . Business</span>
+                            <a href="{% url 'edit' post.id %}" class="btn btn-warning">Update</a>
+                            <form action="{% url 'delete' post.id %}" method="POST" class="d-inline-block">
+                                {% csrf_token %}
+                             <input type="submit" class="btn btn-danger" value="Delete"/>
+                            </form>
                         </div>
                         
                         <!-- Comments -->
